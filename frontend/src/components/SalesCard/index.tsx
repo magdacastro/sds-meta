@@ -62,18 +62,18 @@ function SalesCard() {
             </tr>
           </thead>
           <tbody>
-            {sales.map((el) => {
+            {sales.map((sale) => {
               return (
-                <tr key={el.id}>
-                  <td className="showId">{el.id}</td>
-                  <td className="showData">{new Date(el.date).toLocaleDateString()}</td>
-                  <td>{el.sellerName}</td>
-                  <td className="showVisits">{el.visited}</td>
-                  <td className="showSales">{el.deals}</td>
-                  <td>{el.amount.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
+                <tr key={sale.id}>
+                  <td className="showId">{sale.id}</td>
+                  <td className="showData">{new Date(sale.date).toLocaleDateString()}</td>
+                  <td>{sale.sellerName}</td>
+                  <td className="showVisits">{sale.visited}</td>
+                  <td className="showSales">{sale.deals}</td>
+                  <td>{sale.amount.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
                   <td>
                     <div className="dsmeta-red-btn-container">
-                      <NotificationButton />
+                      <NotificationButton saleId={sale.id} />
                     </div>
                   </td>
                 </tr>
